@@ -53,7 +53,7 @@ async def status(ctx):
     await ctx.send(f'✅ Bot está online e funcionando!')
 
 # Comando Slash /fpl
-@bot.tree.command(name='fpl', description='Plano de Voo - FBR')
+@bot.tree.command(name='fpl', description='Registra um Plano de Voo')
 @app_commands.describe(
     numero_voo="Número do Voo",
     nivel_voo="Nível de Voo",

@@ -82,7 +82,8 @@ async def fpl(
     # Cria o embed com cor verde pura
     embed = discord.Embed(
         title="✈️ Plano de Voo - FBR",
-        color=0x00FF00
+        color=0x00FF00,
+        description="─────────────────────────────────"
     )
     
     # Adiciona os campos
@@ -94,6 +95,9 @@ async def fpl(
     embed.add_field(name="🛫 Partida", value=partida, inline=False)
     embed.add_field(name="🛬 Destino", value=destino, inline=False)
     embed.add_field(name="🕐 Horário", value=horario, inline=False)
+    
+    # Adiciona linha na footer
+    embed.set_footer(text="─────────────────────────────────")
     
     await interaction.response.send_message(embed=embed)
 

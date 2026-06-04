@@ -79,30 +79,23 @@ async def fpl(
 ):
     """Cria um plano de voo"""
     
-    # Cria a mensagem formatada
-    mensagem = f"""# ✈️ Plano de Voo - FBR
-─────────────────────────────────
-
-👨‍✈️ Piloto
-@{interaction.user.name}
-🔢 Número de Voo
-{numero_voo}
-☁️ Nível de Voo
-{nivel_voo}
-✈️ Aeronave
-{aeronave}
-📡 Tipo de Voo
-{tipo_voo.value}
-🛫 Partida
-{partida}
-🛬 Destino
-{destino}
-🕐 Horário
-{horario}
-
-─────────────────────────────────"""
+    # Cria o embed
+    embed = discord.Embed(
+        title="✈️ Plano de Voo - FBR",
+        color=0xFF8C00
+    )
     
-    await interaction.response.send_message(mensagem)
+    # Adiciona os campos
+    embed.add_field(name="👨‍✈️ Piloto", value=f"{interaction.user.mention}", inline=False)
+    embed.add_field(name="🔢 Número de Voo", value=numero_voo, inline=False)
+    embed.add_field(name="☁️ Nível de Voo", value=nivel_voo, inline=False)
+    embed.add_field(name="✈️ Aeronave", value=aeronave, inline=False)
+    embed.add_field(name="📡 Tipo de Voo", value=tipo_voo.value, inline=False)
+    embed.add_field(name="🛫 Partida", value=partida, inline=False)
+    embed.add_field(name="🛬 Destino", value=destino, inline=False)
+    embed.add_field(name="🕐 Horário", value=horario, inline=False)
+    
+    await interaction.response.send_message(embed=embed)
 
 # Roda o bot
 if __name__ == '__main__':

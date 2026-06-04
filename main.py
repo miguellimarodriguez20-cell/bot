@@ -81,7 +81,7 @@ async def fpl(
     
     # Cria a mensagem formatada
     mensagem = f"""# ✈️ Plano de Voo - FBR
------------------------------------
+─────────────────────────────────
 
 👨‍✈️ Piloto
 @{interaction.user.name}
@@ -100,7 +100,7 @@ async def fpl(
 🕐 Horário
 {horario}
 
------------------------------------"""
+─────────────────────────────────"""
     
     await interaction.response.send_message(mensagem)
 

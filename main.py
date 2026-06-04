@@ -79,10 +79,10 @@ async def fpl(
 ):
     """Cria um plano de voo"""
     
-    # Cria o embed
+    # Cria o embed com cor verde pura
     embed = discord.Embed(
         title="✈️ Plano de Voo - FBR",
-        color=0xFF8C00
+        color=0x00FF00
     )
     
     # Adiciona os campos
